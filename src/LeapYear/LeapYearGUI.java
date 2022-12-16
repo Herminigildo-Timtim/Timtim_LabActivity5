@@ -48,7 +48,7 @@ public class LeapYearGUI extends JFrame {
                 JOptionPane.showMessageDialog(panel1, "Not a leap year");
             }
         } catch (Exception hermi) {
-            JOptionPane.showMessageDialog(panel1, hermi.toString());
+            JOptionPane.showMessageDialog(panel1, "Invalid Input. Numbers Only!");
         }
     }
 

@@ -16,6 +16,20 @@ public class FoodOrderGUI extends JFrame {
     private JRadioButton rb10;
     private JRadioButton rb15;
 
+    public FoodOrderGUI(){
+
+    }
+
+    public void calculator(){
+        try{
+            double res = 0;
+
+
+        }catch (Exception hermi){
+            JOptionPane.showMessageDialog(panel1, hermi.toString());
+        }
+    }
+
     public static void main(String[] args) {
 
     }

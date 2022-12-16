@@ -32,40 +32,56 @@ public class FoodOrderGUI extends JFrame {
     }
 
     public void calculator(){
+
         try{
+            int flag = 0;
             double res = 0;
             double discounted = 0;
             if(cPizza.isSelected()){
                 res+=100;
+                flag=1;
             }
             if(cBurger.isSelected()){
                 res+=80;
+                flag=1;
             }
             if(cFries.isSelected()){
                 res+=65;
+                flag=1;
             }
             if(cSoftDrinks.isSelected()){
                 res+=55;
+                flag=1;
             }
             if(cTea.isSelected()){
                 res+=50;
+                flag=1;
             }
             if(cSundae.isSelected()){
                 res+=40;
+                flag=1;
             }
 
-            if(rb5.isSelected()){
-                discounted = (res*0.05);
-                res-=discounted;
-            }else if(rb10.isSelected()){
-                discounted =  (res*0.10);
-                res-=discounted;
-            }else if(rb15.isSelected()){
-                discounted =  res*0.15;
-                res-=discounted;
-            }
+            int flag2=0;
+                if (rb5.isSelected()) {
+                    discounted = (res * 0.05);
+                    res -= discounted;
+                    flag2=1;
+                } else if (rb10.isSelected()) {
+                    discounted = (res * 0.10);
+                    res -= discounted;
+                    flag2=1;
+                } else if (rb15.isSelected()) {
+                    discounted = res * 0.15;
+                    res -= discounted;
+                    flag2=1;
+                }
 
-            JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", res));
+                if(flag ==0 && flag2==0){
+                    JOptionPane.showMessageDialog(panel1,"Please check again if you have checked at least one on Foods and Discount");
+                }else{
+                    JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", res));
+                }
         }catch (Exception hermi){
             JOptionPane.showMessageDialog(panel1, hermi.toString());
         }

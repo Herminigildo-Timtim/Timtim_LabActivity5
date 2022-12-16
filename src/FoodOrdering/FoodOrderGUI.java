@@ -73,7 +73,7 @@ public class FoodOrderGUI extends JFrame {
 
     public static void main(String[] args) {
         FoodOrderGUI app = new FoodOrderGUI();
-        app.setTitle("Leap Year Checker");
+        app.setTitle("Food Ordering System");
         app.setContentPane(app.panel1);
         app.setVisible(true);
         app.setSize(700,500);

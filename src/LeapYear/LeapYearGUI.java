@@ -40,7 +40,7 @@ public class LeapYearGUI extends JFrame {
     }
 
     public void checker(){
-        try {
+        try{
             int year = Integer.parseInt(tfYear.getText());
             if (year % 400 == 0 || ((year % 4 == 0) && (year%100!=0))) {
                 JOptionPane.showMessageDialog(panel1, "Leap year");

@@ -23,24 +23,6 @@ public class FoodOrderGUI extends JFrame {
     private JRadioButton rb15;
 
     public FoodOrderGUI(){
-        panel1.addKeyListener(new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyCode()== KeyEvent.VK_ENTER){
-                    calculator();
-                }
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
-        });
         btnOrder.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,6 +34,7 @@ public class FoodOrderGUI extends JFrame {
     public void calculator(){
         try{
             double res = 0;
+            double discounted = 0;
             if(cPizza.isSelected()){
                 res+=100;
             }
@@ -72,14 +55,17 @@ public class FoodOrderGUI extends JFrame {
             }
 
             if(rb5.isSelected()){
-                res *=0.5;
+                discounted = (res*0.05);
+                res-=discounted;
             }else if(rb10.isSelected()){
-                res*=0.10;
+                discounted =  (res*0.10);
+                res-=discounted;
             }else if(rb15.isSelected()){
-                res*=0.15;
+                discounted =  res*0.15;
+                res-=discounted;
             }
 
-
+            JOptionPane.showMessageDialog(panel1, String.format("The total price is Php %.2f ", res));
         }catch (Exception hermi){
             JOptionPane.showMessageDialog(panel1, hermi.toString());
         }
@@ -90,7 +76,7 @@ public class FoodOrderGUI extends JFrame {
         app.setTitle("Leap Year Checker");
         app.setContentPane(app.panel1);
         app.setVisible(true);
-        app.setSize(300,200);
+        app.setSize(700,500);
         app.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 

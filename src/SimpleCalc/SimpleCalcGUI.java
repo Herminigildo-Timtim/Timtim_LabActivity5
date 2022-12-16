@@ -78,7 +78,7 @@ public class SimpleCalcGUI  extends JFrame{
             }
             lblResult.setText(String.valueOf(res));
         }catch(Exception hermi){
-            JOptionPane.showMessageDialog(panel1, hermi.toString());
+            JOptionPane.showMessageDialog(panel1, "Invalid Input.");
         }
     }
     public static void main(String[] args) {
